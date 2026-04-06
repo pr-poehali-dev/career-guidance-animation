@@ -23,7 +23,7 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen grid-bg" style={{ background: 'hsl(var(--background))' }}>
+    <div className="min-h-screen grid-bg bg-background">
       <NavBar activePage={activePage} onNavigate={(page) => setActivePage(page as Page)} />
 
       <main className="md:pl-64 pb-20 md:pb-0 min-h-screen">
@@ -32,20 +32,10 @@ export default function Index() {
         </div>
       </main>
 
-      <div
-        className="fixed top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(0,255,136,0.04) 0%, transparent 70%)',
-          zIndex: 0
-        }}
-      />
-      <div
-        className="fixed bottom-20 left-64 w-80 h-80 rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(168,85,247,0.04) 0%, transparent 70%)',
-          zIndex: 0
-        }}
-      />
+      <div className="fixed top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%)', zIndex: 0 }} />
+      <div className="fixed bottom-20 left-64 w-80 h-80 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.05) 0%, transparent 70%)', zIndex: 0 }} />
     </div>
   );
 }

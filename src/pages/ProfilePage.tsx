@@ -9,11 +9,11 @@ const testHistory = [
 ];
 
 const skills = [
-  { name: "Аналитика", level: 4, maxLevel: 5, color: "#00ff88" },
-  { name: "Коммуникация", level: 3, maxLevel: 5, color: "#a855f7" },
-  { name: "Технологии", level: 5, maxLevel: 5, color: "#38bdf8" },
-  { name: "Творчество", level: 3, maxLevel: 5, color: "#fbbf24" },
-  { name: "Лидерство", level: 2, maxLevel: 5, color: "#f472b6" },
+  { name: "Аналитика", level: 4, maxLevel: 5, color: "#8b5cf6" },
+  { name: "Коммуникация", level: 3, maxLevel: 5, color: "#ec4899" },
+  { name: "Технологии", level: 5, maxLevel: 5, color: "#3b82f6" },
+  { name: "Творчество", level: 3, maxLevel: 5, color: "#f59e0b" },
+  { name: "Лидерство", level: 2, maxLevel: 5, color: "#10b981" },
 ];
 
 const totalXp = 2450;
@@ -25,59 +25,56 @@ export default function ProfilePage() {
   return (
     <div className="p-6 md:p-8 max-w-4xl">
       <div className="mb-6 animate-fade-in-up">
-        <h1 className="font-display text-2xl md:text-3xl font-bold text-white">
-          Профиль<span className="text-neon-purple">.</span>
+        <h1 className="font-display text-2xl md:text-3xl font-bold text-gray-900">
+          Профиль<span style={{ color: '#8b5cf6' }}>.</span>
         </h1>
       </div>
 
       {/* Profile card */}
       <div className="card-game p-6 mb-6 animate-fade-in-up delay-100">
         <div className="flex flex-col md:flex-row gap-6">
-          {/* Avatar */}
           <div className="flex flex-col items-center gap-3">
             <div className="relative">
               <div className="w-24 h-24 rounded-2xl flex items-center justify-center text-3xl font-bold font-display text-white"
-                style={{ background: 'linear-gradient(135deg, #a855f7, #f472b6)' }}>
+                style={{ background: 'linear-gradient(135deg, #8b5cf6, #ec4899)' }}>
                 АВ
               </div>
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-black text-xs font-bold font-display"
-                style={{ background: 'var(--neon-green)', boxShadow: '0 0 12px rgba(0,255,136,0.5)' }}>
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold font-display"
+                style={{ background: 'linear-gradient(135deg, #8b5cf6, #a78bfa)', boxShadow: '0 4px 12px rgba(139,92,246,0.4)' }}>
                 {level}
               </div>
             </div>
             <span className="badge-rank">Исследователь</span>
           </div>
 
-          {/* Info */}
           <div className="flex-1">
-            <h2 className="font-display text-xl font-bold text-white mb-1">Александр Васильев</h2>
-            <p className="text-muted-foreground font-body text-sm mb-4">На платформе с января 2025</p>
+            <h2 className="font-display text-xl font-bold text-gray-900 mb-1">Александр Васильев</h2>
+            <p className="text-gray-400 font-body text-sm mb-4">На платформе с января 2025</p>
 
             <div className="grid grid-cols-3 gap-4 mb-4">
-              <div className="text-center p-3 rounded-xl bg-muted/40">
-                <p className="font-display text-xl font-bold text-neon-green">{testHistory.length}</p>
-                <p className="text-xs text-muted-foreground font-body">Тестов</p>
+              <div className="text-center p-3 rounded-2xl bg-emerald-50 border border-emerald-100">
+                <p className="font-display text-xl font-bold" style={{ color: '#10b981' }}>{testHistory.length}</p>
+                <p className="text-xs text-gray-400 font-body">Тестов</p>
               </div>
-              <div className="text-center p-3 rounded-xl bg-muted/40">
-                <p className="font-display text-xl font-bold text-neon-yellow">{totalXp}</p>
-                <p className="text-xs text-muted-foreground font-body">XP всего</p>
+              <div className="text-center p-3 rounded-2xl bg-amber-50 border border-amber-100">
+                <p className="font-display text-xl font-bold" style={{ color: '#f59e0b' }}>{totalXp}</p>
+                <p className="text-xs text-gray-400 font-body">XP всего</p>
               </div>
-              <div className="text-center p-3 rounded-xl bg-muted/40">
-                <p className="font-display text-xl font-bold text-neon-purple">#14</p>
-                <p className="text-xs text-muted-foreground font-body">Рейтинг</p>
+              <div className="text-center p-3 rounded-2xl bg-violet-50 border border-violet-100">
+                <p className="font-display text-xl font-bold" style={{ color: '#8b5cf6' }}>#14</p>
+                <p className="text-xs text-gray-400 font-body">Рейтинг</p>
               </div>
             </div>
 
-            {/* XP bar */}
             <div>
               <div className="flex justify-between mb-1.5">
-                <span className="text-xs text-muted-foreground font-body">Уровень {level}</span>
-                <span className="text-xs font-bold font-display text-neon-yellow">{totalXp} / {nextLevelXp} XP</span>
+                <span className="text-xs text-gray-400 font-body">Уровень {level}</span>
+                <span className="text-xs font-bold font-display" style={{ color: '#f59e0b' }}>{totalXp} / {nextLevelXp} XP</span>
               </div>
               <div className="xp-bar" style={{ height: '10px' }}>
                 <div className="xp-bar-fill" style={{ width: `${xpPercent}%` }} />
               </div>
-              <p className="text-xs text-neon-green mt-1.5 font-body">{nextLevelXp - totalXp} XP до уровня {level + 1}</p>
+              <p className="text-xs mt-1.5 font-body" style={{ color: '#8b5cf6' }}>{nextLevelXp - totalXp} XP до уровня {level + 1}</p>
             </div>
           </div>
         </div>
@@ -85,56 +82,49 @@ export default function ProfilePage() {
 
       {/* Two columns */}
       <div className="grid md:grid-cols-2 gap-6 mb-6">
-        {/* Skills */}
         <div className="card-game p-5 animate-fade-in-up delay-200">
-          <h3 className="font-display text-sm font-bold text-white mb-4 flex items-center gap-2">
-            <Icon name="Zap" size={16} className="text-neon-yellow" />
+          <h3 className="font-display text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <Icon name="Zap" size={16} style={{ color: '#f59e0b' }} />
             Навыки
           </h3>
           <div className="space-y-4">
             {skills.map((skill) => (
-              <div key={skill.name}>
-                <div className="flex justify-between items-center mb-1.5">
-                  <span className="text-sm text-white font-body">{skill.name}</span>
-                  <div className="flex gap-1">
-                    {Array.from({ length: skill.maxLevel }).map((_, j) => (
-                      <div
-                        key={j}
-                        className="w-4 h-4 rounded-sm transition-all duration-300"
-                        style={{
-                          background: j < skill.level ? skill.color : 'hsl(var(--muted))',
-                          boxShadow: j < skill.level ? `0 0 6px ${skill.color}66` : 'none'
-                        }}
-                      />
-                    ))}
-                  </div>
+              <div key={skill.name} className="flex justify-between items-center">
+                <span className="text-sm text-gray-700 font-body">{skill.name}</span>
+                <div className="flex gap-1.5">
+                  {Array.from({ length: skill.maxLevel }).map((_, j) => (
+                    <div key={j} className="w-5 h-5 rounded-md transition-all duration-300"
+                      style={{
+                        background: j < skill.level ? skill.color : '#f3f4f6',
+                        boxShadow: j < skill.level ? `0 2px 6px ${skill.color}44` : 'none'
+                      }} />
+                  ))}
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Recommended */}
         <div className="card-game p-5 animate-fade-in-up delay-300">
-          <h3 className="font-display text-sm font-bold text-white mb-4 flex items-center gap-2">
-            <Icon name="Target" size={16} className="text-neon-green" />
+          <h3 className="font-display text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <Icon name="Target" size={16} style={{ color: '#10b981' }} />
             Рекомендации ИИ
           </h3>
           <div className="space-y-3">
-            <div className="p-3 rounded-xl border border-neon-green/20 bg-neon-green/5">
-              <p className="text-xs font-bold text-neon-green font-display mb-1">Лучшее совпадение</p>
-              <p className="text-sm text-white font-body">💻 Разработчик ПО — 94% совпадение</p>
-              <p className="text-xs text-muted-foreground mt-1">По результатам технических тестов</p>
+            <div className="p-3 rounded-2xl border border-emerald-200 bg-emerald-50">
+              <p className="text-xs font-bold font-display mb-1" style={{ color: '#10b981' }}>Лучшее совпадение</p>
+              <p className="text-sm text-gray-900 font-body">💻 Разработчик ПО — 94% совпадение</p>
+              <p className="text-xs text-gray-400 mt-1">По результатам технических тестов</p>
             </div>
-            <div className="p-3 rounded-xl border border-neon-purple/20 bg-neon-purple/5">
-              <p className="text-xs font-bold text-neon-purple font-display mb-1">Стоит изучить</p>
-              <p className="text-sm text-white font-body">📊 Data Scientist — 87% совпадение</p>
-              <p className="text-xs text-muted-foreground mt-1">Усиль аналитические навыки</p>
+            <div className="p-3 rounded-2xl border border-violet-200 bg-violet-50">
+              <p className="text-xs font-bold font-display mb-1" style={{ color: '#8b5cf6' }}>Стоит изучить</p>
+              <p className="text-sm text-gray-900 font-body">📊 Data Scientist — 87% совпадение</p>
+              <p className="text-xs text-gray-400 mt-1">Усиль аналитические навыки</p>
             </div>
-            <div className="p-3 rounded-xl border border-neon-yellow/20 bg-neon-yellow/5">
-              <p className="text-xs font-bold text-neon-yellow font-display mb-1">Следующий тест</p>
-              <p className="text-sm text-white font-body">🧠 Тест пространственного мышления</p>
-              <p className="text-xs text-muted-foreground mt-1">+180 XP после прохождения</p>
+            <div className="p-3 rounded-2xl border border-amber-200 bg-amber-50">
+              <p className="text-xs font-bold font-display mb-1" style={{ color: '#f59e0b' }}>Следующий тест</p>
+              <p className="text-sm text-gray-900 font-body">🧠 Тест пространственного мышления</p>
+              <p className="text-xs text-gray-400 mt-1">+180 XP после прохождения</p>
             </div>
           </div>
         </div>
@@ -142,33 +132,28 @@ export default function ProfilePage() {
 
       {/* Test history */}
       <div className="card-game p-5 animate-fade-in-up delay-400">
-        <h3 className="font-display text-sm font-bold text-white mb-4 flex items-center gap-2">
-          <Icon name="History" size={16} className="text-neon-blue" />
+        <h3 className="font-display text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <Icon name="History" size={16} style={{ color: '#3b82f6' }} />
           История тестов
           <span className="badge-xp ml-auto">+{testHistory.reduce((s, t) => s + t.xp, 0)} XP</span>
         </h3>
         <div className="space-y-2">
-          {testHistory.map((test, i) => {
-            const scoreColor = test.score >= 85 ? '#00ff88' : test.score >= 70 ? '#fbbf24' : '#f472b6';
+          {testHistory.map((test) => {
+            const sc = test.score >= 85 ? '#10b981' : test.score >= 70 ? '#f59e0b' : '#8b5cf6';
+            const bg = test.score >= 85 ? 'bg-emerald-50' : test.score >= 70 ? 'bg-amber-50' : 'bg-violet-50';
             return (
-              <div
-                key={test.name}
-                className="flex items-center gap-4 p-3 rounded-xl bg-muted/40 hover:bg-muted/60 transition-all duration-200 cursor-pointer group"
-                style={{ animationDelay: `${i * 0.05}s` }}
-              >
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                  style={{ background: `${scoreColor}18` }}>
-                  <Icon name={test.icon} size={16} style={{ color: scoreColor }} />
+              <div key={test.name}
+                className="flex items-center gap-4 p-3 rounded-2xl bg-gray-50 hover:bg-violet-50 transition-all duration-200 cursor-pointer group border border-transparent hover:border-violet-100">
+                <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${bg}`}>
+                  <Icon name={test.icon} size={16} style={{ color: sc }} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-white font-body font-medium truncate">{test.name}</p>
-                  <p className="text-xs text-muted-foreground">{test.date}</p>
+                  <p className="text-sm text-gray-900 font-body font-medium truncate">{test.name}</p>
+                  <p className="text-xs text-gray-400">{test.date}</p>
                 </div>
                 <div className="text-right shrink-0">
-                  <p className="font-display text-sm font-bold" style={{ color: scoreColor }}>
-                    {test.score}%
-                  </p>
-                  <p className="text-[10px] text-neon-green">+{test.xp} XP</p>
+                  <p className="font-display text-sm font-bold" style={{ color: sc }}>{test.score}%</p>
+                  <p className="text-[10px]" style={{ color: '#10b981' }}>+{test.xp} XP</p>
                 </div>
               </div>
             );
